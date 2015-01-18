@@ -24,8 +24,8 @@ void setVel(int motor, int vel)
   }
   else if(vel<0) {
     an = ANALOG_MAX+vel;
-    analogWrite(in1[motor], 1);
-    digitalWrite(in2[motor], an);
+    digitalWrite(in1[motor], 1);
+    analogWrite(in2[motor], an);
   }
 }
 
