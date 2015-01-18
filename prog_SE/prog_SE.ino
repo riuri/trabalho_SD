@@ -29,16 +29,6 @@ void setVel(int motor, int vel)
   }
 }
 
-void setVelA(int vel)
-{
-  setVel(0, vel);
-}
-
-void setVelB(int vel)
-{
-  setVel(1, vel);
-}
-
 void alteraVel(int somaA, int somaB)
 {
   vel[0] += somaA;
@@ -70,39 +60,6 @@ void acao(char c)
     case 'v':
       alteraVel(-vel[0], -vel[1]);
       break;
-  }
-}
-
-void testarponteH()
-{
-  setVelA(200);
-  delay(1000);
-  setVelA(255);
-  delay(1000);
-  setVelA(0);
-  delay(1000);
-  setVelA(-255);
-  delay(1000);
-  setVelA(-200);
-  delay(1000);
-  setVelA(0);
-  delay(1000);
-}
-
-void testarBluetooth()
-{
-  if(Serial.available()>0) {
-    char c = Serial.read();
-    for(int i = 128; i>=1; i/=2) {
-      digitalWrite(led, 1);
-      delay(100);
-      if(c&i) digitalWrite(led, 1);
-      else digitalWrite(led, 0);
-      delay(400);
-      digitalWrite(led, 0);
-      delay(500);
-    }
-    delay(500);
   }
 }
 
