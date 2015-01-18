@@ -54,17 +54,21 @@ void acao(char c)
 {
   switch(c)
   {
-    case 'F':
+    case 'F': // Para frente
       alteraVel(+vstep, +vstep);
       break;
-    case 'B':
+    case 'B': // Para trás
       alteraVel(-vstep, -vstep);
       break;
-    case 'R':
+    case 'R': // Direita
       alteraVel(-vstep, +vstep);
       break;
-    case 'L':
+    case 'L': // Esquerda
       alteraVel(+vstep, -vstep);
+      break;
+    case 'V': // Emergência
+    case 'v':
+      alteraVel(-vel[0], -vel[1]);
       break;
   }
 }
